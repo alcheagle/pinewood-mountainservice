@@ -8,6 +8,8 @@ def index(request):
 from tracking.forms import UploadForm
 from django.views.generic.edit import FormView
 
+from file_parser import file_parser
+
 class UploadView(FormView):
     template_name = 'tracking/form.html'
     form_class = UploadForm
@@ -18,3 +20,13 @@ class UploadView(FormView):
         # It should return an HttpResponse.
         form.send_email()
         return super(UploadView, self).form_valid(form)
+
+def upload_file(request):
+    if request.method == 'POST':
+        form = UploadForm(request.POST, request.FILES)
+        if form.is_valid():
+            file_parser(request.FILES['file'])
+            return HttpResponseRedirect('/success/url/')
+    else:
+        form = UploadForm()
+    return render(request, 'upload.html', {'form': form})
