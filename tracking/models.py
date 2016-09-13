@@ -16,7 +16,7 @@ class Segment(models.Model):
         return "(begin: {}, end: {})".format(self.begin, self.end)
 
 class Track(models.Model):
-    _id = models.CharField(max_length=10)
+    _id = models.CharField(primary_key=True, max_length=10)
     descr = models.CharField(max_length=200)
     tracks = models.ManyToManyField(Segment)
 

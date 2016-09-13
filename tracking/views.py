@@ -18,6 +18,3 @@ class UploadView(FormView):
         # It should return an HttpResponse.
         form.send_email()
         return super(UploadView, self).form_valid(form)
-
-	
-	
