@@ -2,8 +2,8 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 
-def index(request):
-    return HttpResponse("Hello, world. You're at the tracking index.")
+def success(request):
+    return HttpResponse("file uploaded succesfully")
 
 from tracking.forms import UploadForm
 from django.views.generic.edit import FormView
