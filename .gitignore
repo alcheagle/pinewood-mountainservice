@@ -116,3 +116,4 @@ pyvenv.cfg
 pip-selfcheck.json
 share
 
+*.swp
