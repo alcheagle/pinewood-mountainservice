@@ -7,8 +7,8 @@ from . import models
 from rest_framework.renderers import JSONRenderer
 from rest_framework.parsers import JSONParser
 
-def print_json(track_id):
+def print_json(request, track_id):
     track = models.Track.objects.filter(_id=track_id)
-    serializer = TrackSerializer(instance=track)
+    serializer = serializers.TrackSerializer(instance=track)
 
-    return JSONRenderer().render(serializer.data)
+    return HttpResponse(JSONRenderer().render(serializer.data))
