@@ -3,7 +3,7 @@ from django.shortcuts import render
 
 
 def success(request):
-    return HttpResponse("file uploaded succesfully")
+    return HttpResponse("Hello, world. You're at the tracking index.")
 
 from tracking.forms import UploadForm
 from django.views.generic.edit import FormView
@@ -21,11 +21,14 @@ class UploadView(FormView):
         return super(UploadView, self).form_valid(form)
 
 def upload_file(request):
-    if request.method == 'POST':
-        form = UploadForm(request.POST, request.FILES)
-        if form.is_valid():
-            file_parser(request.FILES['file'])
-            return HttpResponseRedirect('/success/url/')
+    print(request.FILES)
+    if request.FILES.getlist('file1') != []:
+        #form = UploadForm(request.POST, request.FILES)
+		file_parser(request.FILES['file1'])
+        #if form.is_valid():
+        #    print("Ajeje")
+        #    file_parser(request.FILES['file1'])
+        #    return HttpResponseRedirect('/success/url/')
     else:
         form = UploadForm()
-    return render(request, 'upload.html', {'form': form})
+    return render(request, 'tracking/form.html', {'form': form})

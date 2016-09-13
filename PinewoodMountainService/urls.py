@@ -20,7 +20,7 @@ from . import views
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-	url(r'^', views.MainPageView.as_view()),
-    url(r'^index/', views.MainPageView.as_view()),	
+#	url(r'^', views.MainPageView.as_view()),
+#    url(r'^index/', views.MainPageView.as_view()),	
     url(r'^tracking/', include('tracking.urls')),
 ]
