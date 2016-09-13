@@ -9,7 +9,7 @@ from tracking.forms import UploadForm
 from django.views.generic.edit import FormView
 
 class UploadView(FormView):
-    template_name = 'tracking/contact.html'
+    template_name = 'tracking/form.html'
     form_class = UploadForm
     success_url = '/thanks/'
 
@@ -18,3 +18,6 @@ class UploadView(FormView):
         # It should return an HttpResponse.
         form.send_email()
         return super(UploadView, self).form_valid(form)
+
+	
+	
