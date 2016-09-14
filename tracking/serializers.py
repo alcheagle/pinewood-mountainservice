@@ -14,6 +14,8 @@ class SegmentSerializer(serializers.Serializer):
         return Segment.objects.create(**validated_data)
 
 class TrackSerializer(serializers.Serializer):
+    name = serializers.CharField(max_length=10,)
+    descr = serializers.CharField(max_length=200,)
     tracks = SegmentSerializer(many=True, read_only=True)
 
     def create(self, validated_data):

@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="GDAL 1.10.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.topografix.com/GPX/1/1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<metadata><bounds minlat="46.227754567088851" minlon="11.096073114330629" maxlat="46.228950225053772" maxlon="11.096642984422205"/></metadata>                  
+<trk>
+  <name>O505A</name>
+  <desc>VIA FER. DEL BURRONE &quot;TULLIO GIOVANELLI&quot; VARIANTE DELLA CASCATA - VF - EEA-D</desc>
+  <trkseg>
+    <trkpt lat="46.227754567088851" lon="11.096356092858189">
+        <ele>255.0</ele>
+    </trkpt>
+    <trkpt lat="46.227813188233625" lon="11.096275977457809">
+        <ele>256.0</ele>
+    </trkpt>
+    <trkpt lat="46.227882035499611" lon="11.096207533664469">
+        <ele>258.0</ele>
+    </trkpt>
+    <trkpt lat="46.227961187780828" lon="11.096170994919879">
+        <ele>261.0</ele>
+    </trkpt>
+    <trkpt lat="46.228133032473345" lon="11.096164441219113">
+        <ele>267.0</ele>
+    </trkpt>
+    <trkpt lat="46.228286716899618" lon="11.096151878906985">
+        <ele>260.0</ele>
+    </trkpt>
+    <trkpt lat="46.228402334690344" lon="11.09611945185258">
+        <ele>255.0</ele>
+    </trkpt>
+    <trkpt lat="46.228453807794125" lon="11.096100273648929">
+        <ele>255.0</ele>
+    </trkpt>
+    <trkpt lat="46.22850002714393" lon="11.096073114330629">
+        <ele>258.0</ele>
+    </trkpt>
+    <trkpt lat="46.228561602877086" lon="11.096101784989328">
+        <ele>258.0</ele>
+    </trkpt>
+    <trkpt lat="46.228640381280393" lon="11.09618376247435">
+        <ele>262.0</ele>
+    </trkpt>
+    <trkpt lat="46.228723034545276" lon="11.096260570726363">
+        <ele>267.0</ele>
+    </trkpt>
+    <trkpt lat="46.228809140317239" lon="11.096345421446069">
+        <ele>272.0</ele>
+    </trkpt>
+    <trkpt lat="46.228905831117068" lon="11.096451814169678">
+        <ele>288.0</ele>
+    </trkpt>
+    <trkpt lat="46.228950225053772" lon="11.096519255152954">
+        <ele>293.0</ele>
+    </trkpt>
+    <trkpt lat="46.228947798592948" lon="11.096553399456937">
+        <ele>293.0</ele>
+    </trkpt>
+    <trkpt lat="46.228916191719456" lon="11.09658370887181">
+        <ele>311.0</ele>
+    </trkpt>
+    <trkpt lat="46.228906535237549" lon="11.096609666996153">
+        <ele>311.0</ele>
+    </trkpt>
+    <trkpt lat="46.228875593179545" lon="11.096642984422205">
+        <ele>311.0</ele>
+    </trkpt>
+  </trkseg>
+</trk>
+</gpx>

@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="GDAL 1.10.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.topografix.com/GPX/1/1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<metadata><bounds minlat="45.880570140114884" minlon="10.823081646284152" maxlat="45.881413043979045" maxlon="10.823482565718752"/></metadata>                  
+<trk>
+  <name>O413A</name>
+  <desc>None</desc>
+  <trkseg>
+    <trkpt lat="45.880570140114884" lon="10.823081646284152">
+        <ele>1177.0</ele>
+    </trkpt>
+    <trkpt lat="45.880691908169887" lon="10.823116172367534">
+        <ele>1166.0</ele>
+    </trkpt>
+    <trkpt lat="45.880810552778343" lon="10.823143379666874">
+        <ele>1167.0</ele>
+    </trkpt>
+    <trkpt lat="45.880960294404595" lon="10.823246736267283">
+        <ele>1166.0</ele>
+    </trkpt>
+    <trkpt lat="45.881068134655706" lon="10.823307999065317">
+        <ele>1162.0</ele>
+    </trkpt>
+    <trkpt lat="45.881169901924885" lon="10.823422673878706">
+        <ele>1167.0</ele>
+    </trkpt>
+    <trkpt lat="45.88129154326829" lon="10.823386188689593">
+        <ele>1189.0</ele>
+    </trkpt>
+    <trkpt lat="45.881413043979045" lon="10.823482565718752">
+        <ele>1183.0</ele>
+    </trkpt>
+  </trkseg>
+</trk>
+</gpx>

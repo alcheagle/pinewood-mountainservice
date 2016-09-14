@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="GDAL 1.10.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.topografix.com/GPX/1/1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<metadata><bounds minlat="46.165519786682722" minlon="11.059354667766319" maxlat="46.166813825891246" maxlon="11.061203039623976"/></metadata>                  
+<trk>
+  <name>O680A</name>
+  <desc>None</desc>
+  <trkseg>
+    <trkpt lat="46.166813825891246" lon="11.061203039623976">
+        <ele>712.0</ele>
+    </trkpt>
+    <trkpt lat="46.166669595645232" lon="11.061080807182705">
+        <ele>716.0</ele>
+    </trkpt>
+    <trkpt lat="46.16660665962241" lon="11.060887517100987">
+        <ele>726.0</ele>
+    </trkpt>
+    <trkpt lat="46.166441345372718" lon="11.060606851415029">
+        <ele>737.0</ele>
+    </trkpt>
+    <trkpt lat="46.166288287651845" lon="11.060435067629388">
+        <ele>741.0</ele>
+    </trkpt>
+    <trkpt lat="46.166172507373354" lon="11.060232422429223">
+        <ele>754.0</ele>
+    </trkpt>
+    <trkpt lat="46.16606864133211" lon="11.06003786566286">
+        <ele>759.0</ele>
+    </trkpt>
+    <trkpt lat="46.165897895617789" lon="11.05986866257591">
+        <ele>767.0</ele>
+    </trkpt>
+    <trkpt lat="46.165746209183162" lon="11.059695638433132">
+        <ele>781.0</ele>
+    </trkpt>
+    <trkpt lat="46.165597418245305" lon="11.059526738953426">
+        <ele>788.0</ele>
+    </trkpt>
+    <trkpt lat="46.165519786682722" lon="11.059354667766319">
+        <ele>794.0</ele>
+    </trkpt>
+  </trkseg>
+</trk>
+</gpx>

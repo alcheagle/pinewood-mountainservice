@@ -1,0 +1,130 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="GDAL 1.10.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.topografix.com/GPX/1/1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<metadata><bounds minlat="45.856433508921107" minlon="10.978229777402532" maxlat="45.859601920257425" maxlon="10.980396354311992"/></metadata>                  
+<trk>
+  <name>O675</name>
+  <desc>VIA FERRATA DI MONTALBANO VF - EEA-MD</desc>
+  <trkseg>
+    <trkpt lat="45.856433508921107" lon="10.980207526126666">
+        <ele>308.0</ele>
+    </trkpt>
+    <trkpt lat="45.856716149267292" lon="10.980185744931083">
+        <ele>311.0</ele>
+    </trkpt>
+    <trkpt lat="45.856965583834636" lon="10.980111644638544">
+        <ele>320.0</ele>
+    </trkpt>
+    <trkpt lat="45.857168921438607" lon="10.980095420082048">
+        <ele>326.0</ele>
+    </trkpt>
+    <trkpt lat="45.857399671497213" lon="10.980128217415526">
+        <ele>337.0</ele>
+    </trkpt>
+    <trkpt lat="45.857509199212231" lon="10.980149625655185">
+        <ele>340.0</ele>
+    </trkpt>
+    <trkpt lat="45.857629897253823" lon="10.98017568160474">
+        <ele>338.0</ele>
+    </trkpt>
+    <trkpt lat="45.857796181807672" lon="10.980297908607859">
+        <ele>344.0</ele>
+    </trkpt>
+    <trkpt lat="45.857940608348507" lon="10.980336272487426">
+        <ele>352.0</ele>
+    </trkpt>
+    <trkpt lat="45.858110347869761" lon="10.980259212526407">
+        <ele>357.0</ele>
+    </trkpt>
+    <trkpt lat="45.858170239337667" lon="10.980153260613067">
+        <ele>371.0</ele>
+    </trkpt>
+    <trkpt lat="45.858172397411387" lon="10.980028769729088">
+        <ele>439.0</ele>
+    </trkpt>
+    <trkpt lat="45.858089929809879" lon="10.979759960492268">
+        <ele>430.0</ele>
+    </trkpt>
+    <trkpt lat="45.858031910300035" lon="10.9794255497086">
+        <ele>432.0</ele>
+    </trkpt>
+    <trkpt lat="45.857984395404195" lon="10.979149738212897">
+        <ele>440.0</ele>
+    </trkpt>
+    <trkpt lat="45.857958741013668" lon="10.978957661749346">
+        <ele>452.0</ele>
+    </trkpt>
+    <trkpt lat="45.857923691822407" lon="10.97863244079033">
+        <ele>454.0</ele>
+    </trkpt>
+    <trkpt lat="45.857965788466629" lon="10.978550846819775">
+        <ele>466.0</ele>
+    </trkpt>
+    <trkpt lat="45.858042031191005" lon="10.97850369930002">
+        <ele>466.0</ele>
+    </trkpt>
+    <trkpt lat="45.858141141082868" lon="10.978482224919697">
+        <ele>534.0</ele>
+    </trkpt>
+    <trkpt lat="45.858256891435012" lon="10.978502949305449">
+        <ele>562.0</ele>
+    </trkpt>
+    <trkpt lat="45.858352602020609" lon="10.978672521555461">
+        <ele>568.0</ele>
+    </trkpt>
+    <trkpt lat="45.858452000196692" lon="10.978966922210677">
+        <ele>573.0</ele>
+    </trkpt>
+    <trkpt lat="45.858534039109152" lon="10.979260578956023">
+        <ele>575.0</ele>
+    </trkpt>
+    <trkpt lat="45.858634444191203" lon="10.97949679092066">
+        <ele>582.0</ele>
+    </trkpt>
+    <trkpt lat="45.858686706506852" lon="10.979831001010915">
+        <ele>582.0</ele>
+    </trkpt>
+    <trkpt lat="45.858809887232617" lon="10.980092885656399">
+        <ele>593.0</ele>
+    </trkpt>
+    <trkpt lat="45.859021488171535" lon="10.980274951240197">
+        <ele>599.0</ele>
+    </trkpt>
+    <trkpt lat="45.859164475002594" lon="10.980396354311992">
+        <ele>596.0</ele>
+    </trkpt>
+    <trkpt lat="45.859193728810617" lon="10.980048417475727">
+        <ele>603.0</ele>
+    </trkpt>
+    <trkpt lat="45.859257935740551" lon="10.979693476660245">
+        <ele>608.0</ele>
+    </trkpt>
+    <trkpt lat="45.859341752738494" lon="10.979546890938169">
+        <ele>609.0</ele>
+    </trkpt>
+    <trkpt lat="45.859408929443255" lon="10.979358104783614">
+        <ele>608.0</ele>
+    </trkpt>
+    <trkpt lat="45.859412095002646" lon="10.979175419595908">
+        <ele>607.0</ele>
+    </trkpt>
+    <trkpt lat="45.859392483168861" lon="10.978967063494739">
+        <ele>608.0</ele>
+    </trkpt>
+    <trkpt lat="45.859338204528271" lon="10.97874910397887">
+        <ele>608.0</ele>
+    </trkpt>
+    <trkpt lat="45.859392535459051" lon="10.978626332891983">
+        <ele>608.0</ele>
+    </trkpt>
+    <trkpt lat="45.859476063452114" lon="10.978496352944278">
+        <ele>609.0</ele>
+    </trkpt>
+    <trkpt lat="45.859524347315336" lon="10.97839011358143">
+        <ele>610.0</ele>
+    </trkpt>
+    <trkpt lat="45.859601920257425" lon="10.978229777402532">
+        <ele>612.0</ele>
+    </trkpt>
+  </trkseg>
+</trk>
+</gpx>

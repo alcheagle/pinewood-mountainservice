@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="GDAL 1.10.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.topografix.com/GPX/1/1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<metadata><bounds minlat="45.863699428269733" minlon="10.900222727833045" maxlat="45.864941109151630" maxlon="10.900769640764265"/></metadata>                  
+<trk>
+  <name>O601A</name>
+  <desc>SENTIERO DEL DOS DEI FRASSINI (Variante del Segron)</desc>
+  <trkseg>
+    <trkpt lat="45.86494110915163" lon="10.900222727833045">
+        <ele>547.0</ele>
+    </trkpt>
+    <trkpt lat="45.864793285501925" lon="10.900343688881783">
+        <ele>542.0</ele>
+    </trkpt>
+    <trkpt lat="45.864672238532442" lon="10.900494420718646">
+        <ele>546.0</ele>
+    </trkpt>
+    <trkpt lat="45.864603306387714" lon="10.900531493952499">
+        <ele>532.0</ele>
+    </trkpt>
+    <trkpt lat="45.864428937405528" lon="10.900522200393587">
+        <ele>550.0</ele>
+    </trkpt>
+    <trkpt lat="45.864217165675832" lon="10.900591636821124">
+        <ele>566.0</ele>
+    </trkpt>
+    <trkpt lat="45.864156406539607" lon="10.900651405064218">
+        <ele>558.0</ele>
+    </trkpt>
+    <trkpt lat="45.864121850219867" lon="10.900721342368245">
+        <ele>558.0</ele>
+    </trkpt>
+    <trkpt lat="45.864063215777051" lon="10.900767011289448">
+        <ele>550.0</ele>
+    </trkpt>
+    <trkpt lat="45.86398918624738" lon="10.900769640764265">
+        <ele>556.0</ele>
+    </trkpt>
+    <trkpt lat="45.863803997027397" lon="10.900729058218317">
+        <ele>571.0</ele>
+    </trkpt>
+    <trkpt lat="45.863716482998036" lon="10.900665781810916">
+        <ele>571.0</ele>
+    </trkpt>
+    <trkpt lat="45.863699428269733" lon="10.900549381236056">
+        <ele>568.0</ele>
+    </trkpt>
+  </trkseg>
+</trk>
+</gpx>

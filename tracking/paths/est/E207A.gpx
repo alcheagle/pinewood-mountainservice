@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="GDAL 1.10.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.topografix.com/GPX/1/1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<metadata><bounds minlat="45.987343256555540" minlon="11.373769421056585" maxlat="45.990947751298286" maxlon="11.375032931357838"/></metadata>                  
+<trk>
+  <name>E207A</name>
+  <desc>SENTIERO DELLA GROTTA DI COSTALTA</desc>
+  <trkseg>
+    <trkpt lat="45.990947751298286" lon="11.375032931357838">
+        <ele>1623.0</ele>
+    </trkpt>
+    <trkpt lat="45.990582680613677" lon="11.375015887232514">
+        <ele>1651.0</ele>
+    </trkpt>
+    <trkpt lat="45.99036481608919" lon="11.374897064410726">
+        <ele>1658.0</ele>
+    </trkpt>
+    <trkpt lat="45.990083050160557" lon="11.374860343732013">
+        <ele>1662.0</ele>
+    </trkpt>
+    <trkpt lat="45.989786598689349" lon="11.374863282070365">
+        <ele>1667.0</ele>
+    </trkpt>
+    <trkpt lat="45.989566623984032" lon="11.374742047146709">
+        <ele>1668.0</ele>
+    </trkpt>
+    <trkpt lat="45.9893278250333" lon="11.374547827509931">
+        <ele>1675.0</ele>
+    </trkpt>
+    <trkpt lat="45.989135910277106" lon="11.374202474931302">
+        <ele>1677.0</ele>
+    </trkpt>
+    <trkpt lat="45.988897544689728" lon="11.373987359828053">
+        <ele>1688.0</ele>
+    </trkpt>
+    <trkpt lat="45.988806682858105" lon="11.37392459327058">
+        <ele>1692.0</ele>
+    </trkpt>
+    <trkpt lat="45.98869861975259" lon="11.373922940845738">
+        <ele>1692.0</ele>
+    </trkpt>
+    <trkpt lat="45.988423904740131" lon="11.374036309464547">
+        <ele>1692.0</ele>
+    </trkpt>
+    <trkpt lat="45.988197149027144" lon="11.374115703718266">
+        <ele>1694.0</ele>
+    </trkpt>
+    <trkpt lat="45.988040948757067" lon="11.374121934185892">
+        <ele>1693.0</ele>
+    </trkpt>
+    <trkpt lat="45.987925675060701" lon="11.374103445575068">
+        <ele>1694.0</ele>
+    </trkpt>
+    <trkpt lat="45.987744146133394" lon="11.374037834741459">
+        <ele>1690.0</ele>
+    </trkpt>
+    <trkpt lat="45.98759881803754" lon="11.373954017423726">
+        <ele>1694.0</ele>
+    </trkpt>
+    <trkpt lat="45.987508524534491" lon="11.373863903410481">
+        <ele>1689.0</ele>
+    </trkpt>
+    <trkpt lat="45.98734325655554" lon="11.373769421056585">
+        <ele>1684.0</ele>
+    </trkpt>
+  </trkseg>
+</trk>
+</gpx>

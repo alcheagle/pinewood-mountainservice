@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="GDAL 1.10.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.topografix.com/GPX/1/1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<metadata><bounds minlat="46.356149132901912" minlon="10.609065115933136" maxlat="46.357429912758413" maxlon="10.613903523909904"/></metadata>                  
+<trk>
+  <name>O122B</name>
+  <desc>None</desc>
+  <trkseg>
+    <trkpt lat="46.357194096388241" lon="10.609065115933136">
+        <ele>2407.0</ele>
+    </trkpt>
+    <trkpt lat="46.357190476968576" lon="10.60932225267219">
+        <ele>2410.0</ele>
+    </trkpt>
+    <trkpt lat="46.357178056600539" lon="10.609603568330581">
+        <ele>2411.0</ele>
+    </trkpt>
+    <trkpt lat="46.357027731034172" lon="10.610040065740366">
+        <ele>2413.0</ele>
+    </trkpt>
+    <trkpt lat="46.356897338734768" lon="10.610268909479295">
+        <ele>2417.0</ele>
+    </trkpt>
+    <trkpt lat="46.356447474349594" lon="10.610904704975955">
+        <ele>2421.0</ele>
+    </trkpt>
+    <trkpt lat="46.356356865066182" lon="10.61131838171104">
+        <ele>2426.0</ele>
+    </trkpt>
+    <trkpt lat="46.356206877450056" lon="10.611730440889728">
+        <ele>2427.0</ele>
+    </trkpt>
+    <trkpt lat="46.356149132901912" lon="10.612091787783445">
+        <ele>2431.0</ele>
+    </trkpt>
+    <trkpt lat="46.356293084250822" lon="10.612324924256235">
+        <ele>2425.0</ele>
+    </trkpt>
+    <trkpt lat="46.356502708859203" lon="10.612400373016174">
+        <ele>2435.0</ele>
+    </trkpt>
+    <trkpt lat="46.356731226127259" lon="10.612431663295304">
+        <ele>2435.0</ele>
+    </trkpt>
+    <trkpt lat="46.356961381508533" lon="10.612340425424408">
+        <ele>2433.0</ele>
+    </trkpt>
+    <trkpt lat="46.357199392398783" lon="10.612298422776572">
+        <ele>2435.0</ele>
+    </trkpt>
+    <trkpt lat="46.357392958578345" lon="10.612402127422001">
+        <ele>2434.0</ele>
+    </trkpt>
+    <trkpt lat="46.357387088115473" lon="10.612818302542136">
+        <ele>2441.0</ele>
+    </trkpt>
+    <trkpt lat="46.35738138848788" lon="10.613222263844294">
+        <ele>2447.0</ele>
+    </trkpt>
+    <trkpt lat="46.357249434828766" lon="10.613561284075089">
+        <ele>2449.0</ele>
+    </trkpt>
+    <trkpt lat="46.357240114623067" lon="10.613622233305128">
+        <ele>2449.0</ele>
+    </trkpt>
+    <trkpt lat="46.357429912758413" lon="10.613903523909904">
+        <ele>2468.0</ele>
+    </trkpt>
+  </trkseg>
+</trk>
+</gpx>

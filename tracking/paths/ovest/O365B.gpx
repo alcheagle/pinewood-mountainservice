@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="GDAL 1.10.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.topografix.com/GPX/1/1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<metadata><bounds minlat="46.288486041185344" minlon="10.878360752629053" maxlat="46.290260255492498" maxlon="10.886715496041671"/></metadata>                  
+<trk>
+  <name>O365B</name>
+  <desc>SENTIERO DEI TOVI DI SANT ANTONI</desc>
+  <trkseg>
+    <trkpt lat="46.289314416030521" lon="10.886715496041671">
+        <ele>1533.0</ele>
+    </trkpt>
+    <trkpt lat="46.289416087460594" lon="10.886531908012834">
+        <ele>1526.0</ele>
+    </trkpt>
+    <trkpt lat="46.289516467258487" lon="10.886393844196824">
+        <ele>1521.0</ele>
+    </trkpt>
+    <trkpt lat="46.289615938965447" lon="10.886310795404425">
+        <ele>1511.0</ele>
+    </trkpt>
+    <trkpt lat="46.289792893737705" lon="10.88615186137044">
+        <ele>1512.0</ele>
+    </trkpt>
+    <trkpt lat="46.289893403698692" lon="10.886005880908835">
+        <ele>1498.0</ele>
+    </trkpt>
+    <trkpt lat="46.289901780885629" lon="10.885825448230683">
+        <ele>1499.0</ele>
+    </trkpt>
+    <trkpt lat="46.289973395224365" lon="10.885450626807589">
+        <ele>1497.0</ele>
+    </trkpt>
+    <trkpt lat="46.290034811244404" lon="10.885028326810669">
+        <ele>1494.0</ele>
+    </trkpt>
+    <trkpt lat="46.290071479527015" lon="10.884785897640953">
+        <ele>1491.0</ele>
+    </trkpt>
+    <trkpt lat="46.290107540012791" lon="10.884252761748598">
+        <ele>1491.0</ele>
+    </trkpt>
+    <trkpt lat="46.290184157017237" lon="10.883901737251056">
+        <ele>1490.0</ele>
+    </trkpt>
+    <trkpt lat="46.290260255492498" lon="10.883582112532746">
+        <ele>1477.0</ele>
+    </trkpt>
+    <trkpt lat="46.290238179127485" lon="10.883266910628366">
+        <ele>1478.0</ele>
+    </trkpt>
+    <trkpt lat="46.290165743189064" lon="10.883036578202844">
+        <ele>1471.0</ele>
+    </trkpt>
+    <trkpt lat="46.289993839654976" lon="10.882889172533124">
+        <ele>1479.0</ele>
+    </trkpt>
+    <trkpt lat="46.28982733292402" lon="10.882741952784986">
+        <ele>1476.0</ele>
+    </trkpt>
+    <trkpt lat="46.28967287255481" lon="10.882524520784024">
+        <ele>1467.0</ele>
+    </trkpt>
+    <trkpt lat="46.28953504338331" lon="10.882291821048971">
+        <ele>1465.0</ele>
+    </trkpt>
+    <trkpt lat="46.289434963766482" lon="10.8820840443686">
+        <ele>1464.0</ele>
+    </trkpt>
+    <trkpt lat="46.289347060194864" lon="10.881798140575572">
+        <ele>1449.0</ele>
+    </trkpt>
+    <trkpt lat="46.289170994588702" lon="10.881241906032464">
+        <ele>1431.0</ele>
+    </trkpt>
+    <trkpt lat="46.288988792344043" lon="10.880724802147297">
+        <ele>1424.0</ele>
+    </trkpt>
+    <trkpt lat="46.288814370223697" lon="10.88039660406972">
+        <ele>1427.0</ele>
+    </trkpt>
+    <trkpt lat="46.288736770008526" lon="10.879812331496133">
+        <ele>1432.0</ele>
+    </trkpt>
+    <trkpt lat="46.288663360944994" lon="10.879306877833702">
+        <ele>1425.0</ele>
+    </trkpt>
+    <trkpt lat="46.288567409532746" lon="10.878847651040557">
+        <ele>1408.0</ele>
+    </trkpt>
+    <trkpt lat="46.288486041185344" lon="10.878360752629053">
+        <ele>1394.0</ele>
+    </trkpt>
+  </trkseg>
+</trk>
+</gpx>

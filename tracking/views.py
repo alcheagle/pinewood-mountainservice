@@ -8,10 +8,10 @@ def success(request):
 from tracking.forms import UploadForm
 from django.views.generic.edit import FormView
 
-from file_parser import file_parser
+from .file_parser import file_parser
 
 class UploadView(FormView):
-    template_name = 'tracking/form.html'
+    template_name = 'form.html'
     form_class = UploadForm
     success_url = '/thanks/'
 
@@ -24,11 +24,11 @@ def upload_file(request):
     print(request.FILES)
     if request.FILES.getlist('file1') != []:
         #form = UploadForm(request.POST, request.FILES)
-		file_parser(request.FILES['file1'])
+        file_parser(request.FILES['file1'])
         #if form.is_valid():
         #    print("Ajeje")
         #    file_parser(request.FILES['file1'])
         #    return HttpResponseRedirect('/success/url/')
     else:
         form = UploadForm()
-    return render(request, 'tracking/form.html', {'form': form})
+    return render(request, 'form.html', {'form': form})
