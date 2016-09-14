@@ -16,7 +16,7 @@ class Position(models.Model):
         return "(latitude: {}, longitude: {}, altitude: {})".format(self.latitude, self.longitude, self.elevation)
 
     def save():
-        if !self.objects.filter(latitude=latitude, longitude=longitude, elevation=elevetion).exists():
+        if not self.objects.filter(latitude=latitude, longitude=longitude, elevation=elevetion).exists():
             super(models.Model, self).save()
 
 class Segment(models.Model):
@@ -31,7 +31,7 @@ class Segment(models.Model):
         return "(begin: {}, end: {})".format(self.begin, self.end)
     
     def save():
-        if !self.objects.filter(begin=begin, end=end).exists():
+        if not self.objects.filter(begin=begin, end=end).exists():
             super(models.Model, self).save()
 
 class Track(models.Model):
@@ -46,5 +46,5 @@ class Track(models.Model):
         return str(self.id)
 
     def save():
-        if !self.objects.filter(name=name).exists():
+        if not self.objects.filter(name=name).exists():
             super(models.Model, self).save()
