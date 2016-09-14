@@ -15,6 +15,10 @@ class Position(models.Model):
     def __str__(self):
         return "(latitude: {}, longitude: {}, altitude: {})".format(self.latitude, self.longitude, self.elevation)
 
+    def save():
+        if !self.objects.filter(latitude=latitude, longitude=longitude, elevation=elevetion).exists():
+            super(models.Model, self).save()
+
 class Segment(models.Model):
     id = models.AutoField(primary_key=True)
     begin = models.OneToOneField(Position, on_delete=models.CASCADE, related_name="begin")
@@ -25,6 +29,10 @@ class Segment(models.Model):
 
     def __str__(self):
         return "(begin: {}, end: {})".format(self.begin, self.end)
+    
+    def save():
+        if !self.objects.filter(begin=begin, end=end).exists():
+            super(models.Model, self).save()
 
 class Track(models.Model):
     id = models.AutoField(primary_key=True)
@@ -36,3 +44,7 @@ class Track(models.Model):
 
     def __str__(self):
         return str(self.id)
+
+    def save():
+        if !self.objects.filter(name=name).exists():
+            super(models.Model, self).save()

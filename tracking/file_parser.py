@@ -39,8 +39,6 @@ def file_parser(filename):
 
         segments.append(segment)
         prev_pos = pos
-    #track.save()
-
 
 if __name__ == "__main__":
     filename = "paths/est/E101.gpx"
