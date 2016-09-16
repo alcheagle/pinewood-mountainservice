@@ -2,6 +2,12 @@ from rest_framework import serializers
 from tracking.models import *
 
 class PositionSerializer(serializers.Serializer):    
+    #latitude = serializers.DecimalField(max_digits=18, decimal_places=18)
+    #longitude = serializers.DecimalField(max_digits=18, decimal_places=18)
+    #elevation = serializers.DecimalField(max_digits=18, decimal_places=18)
+    latitude = serializers.CharField(max_length=40, read_only=True)
+    longitude = serializers.CharField(max_length=40, read_only=True)
+    elevation = serializers.CharField(max_length=40, read_only=True)
 
     def create(self, validated_data):
         return Position.objects.create(**validated_data)

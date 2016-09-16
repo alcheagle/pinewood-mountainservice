@@ -14,11 +14,16 @@ class Position(models.Model):
     
     def __str__(self):
         return "(latitude: {}, longitude: {}, altitude: {})".format(self.latitude, self.longitude, self.elevation)
-
-    def save():
-        if not self.objects.filter(latitude=latitude, longitude=longitude, elevation=elevetion).exists():
-            super(models.Model, self).save()
-
+'''
+    def save(self):
+        if not Position.objects.filter(
+            latitude=self.latitude, 
+            longitude=self.longitude, 
+            elevation=self.elevation).exists():
+             return super(Position, self).save()
+        else:
+            pass
+'''
 class Segment(models.Model):
     id = models.AutoField(primary_key=True)
     begin = models.OneToOneField(Position, on_delete=models.CASCADE, related_name="begin")
@@ -29,14 +34,17 @@ class Segment(models.Model):
 
     def __str__(self):
         return "(begin: {}, end: {})".format(self.begin, self.end)
-    
-    def save():
-        if not self.objects.filter(begin=begin, end=end).exists():
-            super(models.Model, self).save()
-
+'''
+    def save(self):
+        if not Segment.objects.filter(
+            begin=self.begin, 
+            end=self.end).exists():
+            return super(Segment, self).save()
+        else:
+            pass
+''' 
 class Track(models.Model):
     id = models.AutoField(primary_key=True)
-    #name = models.CharField(max_length=10, unique=True)
     name = models.CharField(max_length=10, unique=True)
     descr = models.CharField(max_length=200)
     tracks = models.ManyToManyField(Segment)
@@ -44,7 +52,8 @@ class Track(models.Model):
 
     def __str__(self):
         return str(self.id)
-
-    def save():
-        if not self.objects.filter(name=name).exists():
-            super(models.Model, self).save()
+'''
+    def save(self):
+        if not Track.objects.filter(name=self.name).exists():
+            return super(Track, self).save()
+'''

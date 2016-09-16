@@ -16,10 +16,14 @@ def file_parser(filename):
     name = track[0].text
     descr = track[1].text
     points = track[2]
-    
-    #track = Track(id=name, descr=descr)
+
+    #track_query = Track.objects.filter(name=name)
+    #print(track_query.exists())
+    #if track_query.exists():
+    #    track = track_query[0]
+    #else:
     track = Track(name=name, descr=descr)
-    track.save()
+    track.
 
     segments = []
     prev_coord = points[0].attrib
@@ -30,14 +34,24 @@ def file_parser(filename):
         coord = point.attrib
         elev = point[0].text
         
-        pos = Position(latitude=coord['lat'], longitude=coord['lon'], elevation=elev)
-        pos.save()
+        pos_query = Position.objects.filter(latitude=coord['lat'], longitude=coord['lon'], elevation=elev)
+        print(pos_query)
+        if pos_query.exists():
+            pos = pos_query[0]
+        else:
+            pos = Position(latitude=coord['lat'], longitude=coord['lon'], elevation=elev)
+            pos.save()
 
-        segment = Segment(begin=prev_pos, end=pos)
-        segment.save()
+        segment_query = Segment.objects.filter(begin=prev_pos, end=pos)
+
+        if segment_query.exists():
+            segment = segment_query[0]
+        else:
+            segment = Segment(begin=prev_pos, end=pos)
+            segment.save()
         track.tracks.add(segment)
 
-        segments.append(segment)
+        segments.append(segment)#FIXME check if there is already this segment in the track
         prev_pos = pos
 
 if __name__ == "__main__":
