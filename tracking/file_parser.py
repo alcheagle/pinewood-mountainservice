@@ -23,7 +23,7 @@ def file_parser(filename):
     #    track = track_query[0]
     #else:
     track = Track(name=name, descr=descr)
-    track.
+    #track.
 
     segments = []
     prev_coord = points[0].attrib
