@@ -111,5 +111,5 @@ USE_TZ = True
 
 import os.path
 
-STATIC_ROOT = ''
+STATIC_ROOT = '/PinewoodMountainService/'
 STATIC_URL = '/static/'

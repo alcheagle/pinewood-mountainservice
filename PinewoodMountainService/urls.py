@@ -18,6 +18,8 @@ from django.contrib import admin
 from django.http import HttpResponse
 from django.template import loader
 from django.shortcuts import render
+from django.conf import settings
+from django.conf.urls.static import static
 
 def mainPage (request):
     template=loader.get_template('main/mainPage.html')
@@ -30,4 +32,4 @@ urlpatterns = [
 #    url(r'^', views.MainPageView.as_view()),
 #    url(r'^index/', views.MainPageView.as_view()),
     url(r'^tracking/', include('tracking.urls')),
-]
+]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
