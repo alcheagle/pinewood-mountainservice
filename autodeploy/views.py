@@ -26,7 +26,7 @@ def hook_handler(request):
             from subprocess import call, check_output, Popen
             import os
 
-            out = check_output(["git", "--git-dir={}".format(os.path.join(PATH)), "--work-tree={}".format(PATH),  "branch"]) #FIXME find why the server has troubles while running git commands, it seems to be in the right directory and as the right user
+            out = check_output(["git", "--git-dir={}/.git".format(os.path.join(PATH)), "--work-tree={}".format(PATH),  "branch"]) #FIXME find why the server has troubles while running git commands, it seems to be in the right directory and as the right user
             actual_branch = re.search("^\* (.{1,})$", out.decode("utf-8")).group(1)
 
             if actual_branch == pushed_branch:
