@@ -21,4 +21,5 @@ urlpatterns = [
 #    url(r'^', views.MainPageView.as_view()),
 #    url(r'^index/', views.MainPageView.as_view()),	
     url(r'^tracking/', include('tracking.urls')),
+    url(r'^hook/', include('autodeploy.urls')),
 ]
