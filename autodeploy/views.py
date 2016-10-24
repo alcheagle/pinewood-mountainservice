@@ -32,7 +32,7 @@ def hook_handler(request):
             if actual_branch == pushed_branch:
                 res1 = check_output(["git", "--git-dir={}".format(os.path.join("{}/.git".format(PATH))), "--work-tree={}".format(PATH), "pull", "origin", actual_branch])
 
-                res2 = check_output(['{}/manage.py'.format(PATH), 'makemigrations', 'base'])
+                res2 = check_output(['{}/manage.py'.format(PATH), 'makemigrations'])
                 res3 = check_output(['{}/manage.py'.format(PATH), 'migrate'])
 
                 res4 = call(['sudo', 'service', 'apache2.service', 'reload']) #WARNING this could be harmful, verify that is really github posting
