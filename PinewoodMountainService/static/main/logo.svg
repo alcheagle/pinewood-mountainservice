@@ -1,0 +1,12 @@
+<?xml version="1.0"?><svg width="640" height="480" xmlns="http://www.w3.org/2000/svg">
+<svg height="800" width="600">
+  <polygon points="0,0 300,0 150,180"  style="fill:#1b8403;stroke-width:0"/>
+  <polygon points="30,80 270,80 150,225"  style="fill:#1b8403;stroke-width:0 " />
+  <polygon points="50,130 250,130 150,275"  style="fill:#1b8403;stroke-width:0 " />
+  <polygon points="80,135 220,135 150,230"  style="fill:#2abc09;stroke-width:0 " />
+  <polygon points="73,83 227,83 150,170"  style="fill:#2abc09;stroke-width:0 " />
+  <polygon points="110,130 190,130 150,178"  style="fill:#1b8403;stroke-width:0 " />
+  <circle cx="150" cy="270" r="27" stroke="darkred" stroke-width="4" fill="transparent" />
+Sorry, your browser does not support inline SVG.
+</svg>
+	

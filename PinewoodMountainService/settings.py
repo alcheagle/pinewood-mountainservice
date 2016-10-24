@@ -14,7 +14,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
@@ -26,7 +26,6 @@ SECRET_KEY = 'uz8onfdp4@sk#u$kh#g*c$a=epgm7^5hy+l-(i*_-1)!7xe^@&'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -57,7 +56,7 @@ ROOT_URLCONF = 'PinewoodMountainService.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(SETTINGS_PATH, 'PinewoodMountainService/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -78,8 +77,8 @@ WSGI_APPLICATION = 'PinewoodMountainService.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql', 
-        #'ENGINE': 'mysql.connector.django', 
+        'ENGINE': 'django.db.backends.mysql',
+        #'ENGINE': 'mysql.connector.django',
         'NAME': 'pinewood',
         'USER': 'pinewood',
         'PASSWORD': 'pinewood',
@@ -110,4 +109,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
+import os.path
+
+STATIC_ROOT = '/PinewoodMountainService/'
 STATIC_URL = '/static/'
