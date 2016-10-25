@@ -17,7 +17,7 @@ def hook_handler(request):
             config = json.load(config_file)
 
         import hmac, hashlib
-        digest = hmac.new(config["SECRET"], msg=payload_unicode, digestmod=hashlib.sha1)
+        digest = hmac.new(config['SECRET'], msg=payload_unicode, digestmod=hashlib.sha1)
         verified = hmac.compare_digest(request.META['HTTP_X_HUB_SIGNATURE'], u"sha1=" + digest.hexdigest())
         return HttpResponse("{} == {} ? {}".format(request.META['HTTP_X_HUB_SIGNATURE'], u"sha1=" + digest.hexdigest(), verified))
         config.close()
