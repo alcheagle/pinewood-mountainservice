@@ -13,12 +13,13 @@ def hook_handler(request):
     #verify with secret from github
     if os.path.isfile(CONFIG_FILE):
         with open(CONFIG_FILE, "r") as config_file:
-            config = json.loads(config_file.decode("utf-8"))
+            config = json.load(config_file.decode("utf-8"))
 
         import hmac, hashlib
         digest = hmac.new(config["SECRET"], msg=request.body, digestmod=hashlib.sha1)
         verified = hmac.compare_digest(request.META['HTTP_X_HUB_SIGNATURE'], u"sha1=" + digest.hexdigest())
         return HttpResponse("{} == {} ? {}".format(request.META['HTTP_X_HUB_SIGNATURE'], u"sha1=" + digest.hexdigest(), verified))
+        config.close()
     else:
         verified = not REQUIRE_GITHUB_SECRET 
 
@@ -55,6 +56,9 @@ def hook_handler(request):
 
                 res4 = call(['sudo', 'systemctl', 'reload', 'apache2.service']) #WARNING this could be harmful, verify that is really github posting
 
-                return HttpResponse("{} </br> {} </br> {} </br> {}".format(res1, res2, res3, res4))
-            return HttpResponse("Nothing to do here")
+                output = "{} </br> {} </br> {} </br> {}".format(res1, res2, res3, res4)
+            else:
+                output = "Nothing to do here"
+            github_post.close()
+            return HttpResponse(output)
     raise Http404
