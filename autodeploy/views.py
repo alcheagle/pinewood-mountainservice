@@ -10,13 +10,15 @@ REQUIRE_GITHUB_SECRET   = True
 
 @csrf_exempt
 def hook_handler(request):
+    payload_unicode = request.body.decode("utf-8")
+
     #verify with secret from github
     if os.path.isfile(CONFIG_FILE):
         with open(CONFIG_FILE, "r") as config_file:
             config = json.loads(config_file)
 
         import hmac, hashlib
-        digest = hmac.new(config["SECRET"], msg=request.body, digestmod=hashlib.sha1)
+        digest = hmac.new(config["SECRET"], msg=payload_unicode, digestmod=hashlib.sha1)
         verified = hmac.compare_digest(request.META['HTTP_X_HUB_SIGNATURE'], u"sha1=" + digest.hexdigest())
         return HttpResponse("{} == {} ? {}".format(request.META['HTTP_X_HUB_SIGNATURE'], u"sha1=" + digest.hexdigest(), verified))
     else:
@@ -33,7 +35,7 @@ def hook_handler(request):
         '''
         import re
 
-        github_post = json.loads(request.body.decode("utf-8")) #FIXME there could be no json object
+        github_post = json.loads(payload_unicode) #FIXME there could be no json object
 
         if "ref" in github_post:
             GIT_COMMAND = ["git", "--git-dir={}/.git".format(os.path.join(PATH)), "--work-tree={}".format(PATH)]
