@@ -18,7 +18,7 @@ def hook_handler(request):
 
         import hmac, hashlib
         secret_bytearray    = bytearray(map(ord, config['SECRET']))
-        message_bytearray   = bytearray(map(ord, msg=payload_unicode)) 
+        message_bytearray   = bytearray(map(ord, msg=request.body)) 
 
         digest = hmac.new(secret_bytearray, msg=message_bytearray, digestmod=hashlib.sha1)
         verified = hmac.compare_digest(request.META['HTTP_X_HUB_SIGNATURE'], u"sha1=" + digest.hexdigest())
