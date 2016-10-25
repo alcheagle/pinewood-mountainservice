@@ -17,7 +17,7 @@ def hook_handler(request):
             config = json.load(config_file)
 
         import hmac, hashlib
-        secret_bytearray    = bytearray(map(ord, config['SECRET'].encode())) #since in python 2.7 they are messing with unicode there should be called encode method on unicode object 
+        secret_bytearray    = bytearray(config['SECRET'].encode()) #since in python 2.7 they are messing with unicode there should be called encode method on unicode object 
         message_bytearray   = bytearray(map(ord, request.body)) 
 
         digest = hmac.new(secret_bytearray, msg=message_bytearray, digestmod=hashlib.sha1)
