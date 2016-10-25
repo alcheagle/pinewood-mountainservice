@@ -52,7 +52,7 @@ def hook_handler(request):
                 res2 = check_output(MANAGE_COMMAND + ['makemigrations'])
                 res3 = check_output(MANAGE_COMMAND + ['migrate'])
 
-                res4 = call(['sudo', 'service', 'apache2.service', 'reload']) #WARNING this could be harmful, verify that is really github posting
+                res4 = call(['sudo', 'systemctl', 'reload', 'apache2.service']) #WARNING this could be harmful, verify that is really github posting
 
                 return HttpResponse("{} </br> {} </br> {} </br> {}".format(res1, res2, res3, res4))
             return HttpResponse("Nothing to do here")
