@@ -17,7 +17,7 @@ def hook_handler(request):
 
         import hmac, hashlib
         digest = hmac.new(config["SECRET"], msg=request.body, digestmod=hashlib.sha1)
-        verified = hmac.compare_digest(request.META['HTTP_X_HUB_SIGNATURE'], digest.hexdigest())
+        verified = hmac.compare_digest(request.META['HTTP_X_HUB_SIGNATURE'], "sha1=" + digest.hexdigest())
     else:
         verified = not REQUIRE_GITHUB_SECRET 
 
