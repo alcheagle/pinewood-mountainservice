@@ -13,7 +13,7 @@ def hook_handler(request):
     #verify with secret from github
     if os.path.isfile(CONFIG_FILE):
         with open(CONFIG_FILE, "r") as config_file:
-            config = json.load(config_file.decode("utf-8"))
+            config = json.load(config_file)
 
         import hmac, hashlib
         digest = hmac.new(config["SECRET"], msg=request.body, digestmod=hashlib.sha1)
