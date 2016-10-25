@@ -1,13 +1,29 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
+import json
+import os
+import sys
 
-PATH = '/var/www/pinewood-mountainservice'
+PATH                    = '/var/www/pinewood-mountainservice'
+CONFIG_FILE_NAME        = '.config.json'
+CONFIG_FILE             = os.path.join(sys.path[0], CONFIG_FILE_NAME)
+REQUIRE_GITHUB_SECRET   = True
 
 @csrf_exempt
 def hook_handler(request):
+    #verify with secret from github
+    if os.path.isfile(CONFIG_FILE):
+        with open(CONFIG_FILE, "r") as config_file:
+            config = json.loads(config_file)
 
-    if request.method == 'POST':
+        import hmac, hashlib
+        digest = hmac.new(config["SECRET"], msg=request.body, digestmod=hashlib.sha1)
+        verified = hmac.compare_digest(request.META['HTTP_X_HUB_SIGNATURE'], digest)
+    else:
+        verified = not REQUIRE_GITHUB_SECRET 
+
+    if verified and request.method == 'POST':
         '''
         in order the operation to be performed are:
             1 check payload for branch name if corrisponds
@@ -16,15 +32,14 @@ def hook_handler(request):
                 3 migrate
                 4 reload source code
         '''
-        import json
         import re
 
         github_post = json.loads(request.body.decode("utf-8")) #FIXME there could be no json object
+
         if "ref" in github_post:
             pushed_branch = re.search("^.{1,}\/.{1,}\/(.{1,})$", github_post['ref']).group(1) #TODO use compiled regex instead
             print(pushed_branch)
             from subprocess import call, check_output, Popen
-            import os
 
             out = check_output(["git", "--git-dir={}/.git".format(os.path.join(PATH)), "--work-tree={}".format(PATH),  "branch"]) #FIXME find why the server has troubles while running git commands, it seems to be in the right directory and as the right user
             actual_branch = re.search("^\* (.{1,})$", out.decode("utf-8")).group(1)
