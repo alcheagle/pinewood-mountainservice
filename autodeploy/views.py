@@ -1,11 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponse, Http404
 from django.views.decorators.csrf import csrf_exempt
-import json, os, sys
+import json, os
 
 PATH                    = '/var/www/pinewood-mountainservice'
 CONFIG_FILE_NAME        = '.config.json'
-CONFIG_FILE             = os.path.join(sys.path[0], CONFIG_FILE_NAME)
+CONFIG_FILE             = os.path.join(os.path.dirname(__file__), CONFIG_FILE_NAME)
 REQUIRE_GITHUB_SECRET   = True
 
 @csrf_exempt
