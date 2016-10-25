@@ -22,7 +22,6 @@ def hook_handler(request):
 
         digest = hmac.new(secret_bytearray, msg=message_bytearray, digestmod=hashlib.sha1)
         verified = hmac.compare_digest(request.META['HTTP_X_HUB_SIGNATURE'], "sha1=" + digest.hexdigest())
-        config.close()
     else:
         verified = not REQUIRE_GITHUB_SECRET 
 
@@ -46,7 +45,7 @@ def hook_handler(request):
             print(pushed_branch)
             from subprocess import call, check_output, Popen
 
-            out = check_output(GIT_COMMAD + ["branch"]) #FIXME find why the server has troubles while running git commands, it seems to be in the right directory and as the right user
+            out = check_output(GIT_COMMAND + ["branch"]) #FIXME find why the server has troubles while running git commands, it seems to be in the right directory and as the right user
             actual_branch = re.search("^\* (.{1,})$", out.decode("utf-8")).group(1)
 
             if actual_branch == pushed_branch:
@@ -61,6 +60,5 @@ def hook_handler(request):
                 output = "{} </br> {} </br> {} </br> {}".format(res1, res2, res3, res4)
             else:
                 output = "Nothing to do here"
-            github_post.close()
             return HttpResponse(output)
     raise Http404
