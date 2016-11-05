@@ -58,7 +58,7 @@ ROOT_URLCONF = 'PinewoodMountainService.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(SETTINGS_PATH, 'PinewoodMountainService/templates')],
+        'DIRS': [SETTINGS_PATH],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
