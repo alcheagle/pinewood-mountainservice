@@ -120,3 +120,8 @@ share
 *.swp
 
 .config.json
+
+
+### MAC ###
+.DS_Store
+._*

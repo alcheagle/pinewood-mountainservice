@@ -8,7 +8,6 @@ def null (c):
         return False
 
 def getImportant (string):
-    print 'bkhhkoh!'
     i=0
     while null(string[i]):
         print(ord(string[i]))

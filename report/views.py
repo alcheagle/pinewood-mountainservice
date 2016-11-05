@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.template import loader
 from languageMods.models import Language, Report
-import utils
+from . import utils
 
 def ReportForm (request, lang):
     DB = Language.objects.filter (language=lang)

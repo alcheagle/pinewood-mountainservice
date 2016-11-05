@@ -8,7 +8,7 @@ def IndexPage (request, lang):
     DB = Language.objects.filter(language=lang)
     extension='main/mainPage.html'
     extensionCSS='languageMods/index.css'
-    template=loader.get_template('languageMods/index.html')
+    template=loader.get_template('index.html')
     context = {
         'DB': DB,
         'lang': lang,
