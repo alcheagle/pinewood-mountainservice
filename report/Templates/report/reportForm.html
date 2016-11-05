@@ -1,0 +1,80 @@
+{% extends extension %}
+{% block content %}
+<!DOCTYPE html>
+
+<head>
+  <title>
+    {%if DB%}
+      {%for language in DB%}
+        {%if language.campo == "titlereport" %}
+          {{language.text}}
+        {%endif%}
+      {%endfor%}
+    {%else%}
+      Report
+    {%endif%}
+  </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <div class="content container-fluid" id="grad1">
+    <!--TITOLO-->
+    <div style="font-weight: bold; font-size: 3em; font-family: Arial">
+      <center>
+        {{titlereport}}
+      </center>
+    </div>
+    {% if not reportMody %}
+        <form action="/report/{{lang}}/reportReceived" method="post">{% csrf_token %}
+    {%endif%}
+    {% if reportMody %}
+        <form action="/report/{{lang}}/reportModified" method="post">{% csrf_token %}
+    {%endif%}
+    <!-- INDIVIDUAZIONE DEL SENTIERO -->
+    {% if reportMody %}
+        <label for="reportid">
+          Report ID:
+        </label>  <p></p>
+        <input style="width: 70%" type="text" name="reportid" value="{{reportid}}">
+        <p></p>
+        <label for="reportkey">
+          Report KEY:
+        </label>  <p></p>
+        <input style="width: 70%" type="text" name="reportkey" value="{{reportkey}}">
+        <p></p>
+    {%endif%}
+      <label for="pathname">
+        {{pathName}}
+      </label>  <p></p>
+      <input style="width: 70%" type="text" name="pathname" value="{{defPathName}}">
+      <p></p>
+      <!-- DESCRIZIONE-->
+      <label for="description">
+        {{reportdescription}}
+      </label>
+      <p></p>
+      <textarea id='description' name='description' style="width: 70%; height: 300px" maxlength="3000">{{defDescription}}
+      </textarea>
+      <!-- VALUTAZIONE DELL'OSTACOLO -->
+      <p></p><label for ="evaluation">
+        {{obstacleevaluation}}
+      </label>
+      <input id="evaluation" type="text" name="evaluation" value="{{defEvaluation}}">
+      <!-- FOTO PER VALUTARE MEGLIO L'ENTITÀ DEL DANNO-->
+      <p></p><p>Foto: ancora da implementare</p>
+      <!-- TASTO DI INVIO REPORT -->
+      <center>
+        <input name="send" type="submit" id="send" value="{{send}}">
+        {% if reportMody %}
+          <input name="delete" type="submit" id="delete" value="{{delete}}">
+        {% endif %}
+      </center>
+    </form>
+  </div>
+</body>
+{% endblock %}

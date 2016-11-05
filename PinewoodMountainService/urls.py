@@ -17,20 +17,18 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from django.http import HttpResponse
 from django.template import loader
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.conf import settings
 from django.conf.urls.static import static
 
 def mainPage (request):
-    template=loader.get_template('main/mainPage.html')
-#    return HttpResponse ('ciao')
-    return HttpResponse (template.render(request))
+    return redirect('homepage/it')
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', mainPage),
-#    url(r'^', views.MainPageView.as_view()),
-#    url(r'^index/', views.MainPageView.as_view()),
+    url(r'^', include ('languageMods.urls')),
+    url(r'^report/', include('report.urls')),
     url(r'^tracking/', include('tracking.urls')),
     url(r'^hook/', include('autodeploy.urls')),
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

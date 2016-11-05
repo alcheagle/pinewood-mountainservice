@@ -1,0 +1,104 @@
+{% extends extension %}
+
+{% block content %}
+<!DOCTYPE html>
+<head>
+  <title>
+    {%if DB%}
+      {%for language in DB%}
+        {%if language.campo == "titlereportsent" %}
+          {{language.text}}
+        {%endif%}
+      {%endfor%}
+    {%else%}
+      Report
+    {%endif%}
+  </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+  <div class="content container-fluid">
+    <!--TITOLO-->
+    <div style="font-weight: bold; font-size: 3em; font-family: Arial">
+      <center>
+        {%if DB%}
+          {%for language in DB%}
+            {%if language.campo == "titlereportsent" %}
+              {{language.text}}
+            {%endif%}
+          {%endfor%}
+        {%endif%}
+      </center>
+    </div>
+    <!-- REPORT ID -->
+    <label>
+      Report ID*: {{reportID}}
+    </label>
+    <p></p>
+    <!-- REPORT KEY -->
+    <label>
+      Report KEY*: {{reportKEY}}
+    </label>
+    <p></p>
+    <!-- NOME DEL PERCORSO -->
+    <label>
+      {%if DB%}
+        {%for language in DB%}
+          {%if language.campo == "givenname" %}
+            {{language.text}}
+          {%endif%}
+        {%endfor%}
+      {%endif%}
+    </label>
+    {{report.pathName}}
+    <p></p>
+    <!-- DESCRIZIONE -->
+    <label>
+      {%if DB%}
+        {%for language in DB%}
+          {%if language.campo == "givendescription" %}
+            {{language.text}} <p></p>
+          {%endif%}
+        {%endfor%}
+      {%endif%}
+    </label>
+    <div class="col-sm-12">
+    <p>{{report.description}}</p>
+    </div>
+    <p></p>
+    <!-- VALUTAZIONE -->
+    <label>
+      {%if DB%}
+        {%for language in DB%}
+          {%if language.campo == "givenevaluation" %}
+            {{language.text}}
+          {%endif%}
+        {%endfor%}
+      {%endif%}
+    </label>
+    {{report.evaluation}}
+    <p></p>
+    <!-- A COSA SERVONO GLI ASTERISCHI -->
+    <p>
+      {%if DB%}
+        {%for language in DB%}
+          {%if language.campo == "asterixreport" %}
+            {{language.text}}
+          {%endif%}
+        {%endfor%}
+      {%endif%}
+    </p>
+    <form action="/homepage/{{lang}}">
+      <center>
+        <input name="Home" type="submit" id="HOME" value="Homepage">
+      </center>
+    </form>
+  </div>
+</body>
+{% endblock %}

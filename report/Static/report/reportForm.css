@@ -1,0 +1,60 @@
+#grad1 {
+    background: lighgreen; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(left top, lightgreen, white); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(bottom right, lightgreen, white); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(bottom right, lightgreen, white); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to bottom right, lightgreen, white); /* Standard syntax */
+}
+
+.button { /*Bottoni*/
+    background-color: green;
+    border-radius: 12px;
+    border: 2px solid #4CAF50;
+    color: black;
+    font: Arial;
+    padding: 50px 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.3s;
+    cursor: pointer;
+}
+
+.button1:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.button1 {
+    background-color: lightgreen;
+    color: green;
+}
+
+.container-fluid{
+    height: 100vh;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.input {
+    position: absolute;
+    left: 30;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.content{
+    background-color: #bef4b9;
+    min-height: 100%;
+}
+
+.width-300px{
+    width: 300px;
+    display: inline-block;
+}

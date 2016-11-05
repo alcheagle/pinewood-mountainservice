@@ -1,0 +1,77 @@
+{% extends extension %}
+
+{% block content %}
+
+{% load static %}
+<!DOCTYPE html>
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+
+<div>
+    <!-- DESCRIPTION -->
+    <div class="content">
+    <div>
+        {% if DB %}
+          {% for language in DB %}
+            {% if language.campo == "indexdescription" %}
+              {{language.text}}
+            {%endif%}
+          {%endfor%}
+          {% for language in DB %}
+            {% if language.campo == "learnmore" %}
+              <a href="/pinewoodstory/{{lang}}"> {{language.text}} </a>
+            {%endif%}
+          {%endfor%}
+        {%endif%}
+    </div>
+    </div>
+    <!-- ACTION BUTTONS-->
+    <div class="container-fluid text-center">
+    <div>
+        {% if DB %}
+            {% for language in DB %}
+                {% if language.campo == "intestazione" %}
+                    <h1>{{language.text}}</h1>
+                {%endif%}
+            {%endfor%}
+        {%endif%}
+        <div class="container"><center>
+            {% if DB %}
+                {% for language in DB %}
+                    {% if language.campo == "button1" %}
+                        <a href="/iter/{{lang}}" class="button button1 width-300px">{{language.text}}</a>
+                    {%elif language.campo == "button2" %}
+                        <a href="/report/{{lang}}" class="button button1 width-300px">{{language.text}}</a>
+                    {%endif%}
+                {%endfor%}
+            {%endif%}
+        </center></div>
+    </div>
+    </div>
+    <!-- DEVELOPERS' SECTION -->
+    <div class="content">
+        <p>
+            {% if DB %}
+                {% for language in DB %}
+                    {% if language.campo == "indexdeveloper" %}
+                        {{language.text}}
+                    {%endif%}
+                {%endfor%}
+                {% for language in DB %}
+                    {% if language.campo == "learnmore"%}
+                        <a href="/pinewoodstory/{{lang}}"> {{language.text}} </a>
+                    {%endif%}
+                {%endfor%}
+            {%endif%}
+        </p>
+    </div>
+</div>
+{% endblock %}

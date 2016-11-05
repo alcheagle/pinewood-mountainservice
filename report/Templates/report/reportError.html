@@ -1,0 +1,183 @@
+{% extends extension %}
+
+{% block content %}
+<!DOCTYPE html>
+
+<head>
+  <title>
+    {%if DB%}
+      {%for language in DB%}
+        {%if language.campo == "titlereport" %}
+          {{language.text}}
+        {%endif%}
+      {%endfor%}
+    {%else%}
+      Report
+    {%endif%}
+  </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+
+  #grad1 {
+    background: lighgreen; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(left top, lightgreen, white); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(bottom right, lightgreen, white); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(bottom right, lightgreen, white); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to bottom right, lightgreen, white); /* Standard syntax (must be last) */
+  }
+
+  .button { /*Bottoni*/
+    background-color: green;
+    border-radius: 12px;
+    border: 2px solid #4CAF50;
+    color: black;
+    font: Arial;
+    padding: 50px 50px;
+   text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.3s;
+    cursor: pointer;
+  }
+
+  .button1:hover {
+    background-color: #4CAF50;
+    color: white;
+  }
+
+  .button1 {
+    background-color: lightgreen;
+    color: green;
+  }
+
+  .container-fluid{
+    height: 100vh;
+  }
+
+  .container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+
+  .input {
+    position: absolute;
+    left: 30;
+    transform: translateX(-50%) translateY(-50%);
+  }
+
+  .content{
+    background-color: #bef4b9;
+    min-height: 100%;
+  }
+
+  .width-300px{
+    width: 300px;
+    display: inline-block;
+  }
+
+  </style>
+</head>
+
+<body>
+  <div class="content container-fluid" id="grad1">
+    <!--TITOLO-->
+    <div style="font-weight: bold; font-size: 3em; font-family: Arial">
+      <center>
+        {%if DB%}
+          {%for language in DB%}
+            {%if language.campo == "titlereport" %}
+              {{language.text}}
+            {%endif%}
+          {%endfor%}
+        {%endif%}
+      </center>
+    </div>
+    <!-- PERCHE' CI SONO DELLE SCRITTE ROSSE -->
+    <h5>
+      {%if DB%}
+        {%for language in DB%}
+          {%if language.campo == "whyred" %}
+            {{language.text}}
+          {%endif %}
+        {%endfor%}
+      {%endif%}
+    </h5>
+    <form action="/report/{{lang}}/reportReceived" method="post">{% csrf_token %}
+      <!-- INDIVIDUAZIONE DEL SENTIERO -->
+      {% if not pathnameBool %}
+        <label style="color: red;" for="pathname">
+      {%else%}
+        <label for="pathname">
+      {%endif%}
+        {%if DB%}
+          {%for language in DB%}
+            {%if language.campo == "pathName" %}
+              {{language.text}}
+            {%endif%}
+          {%endfor%}
+        {%endif%}
+      </label>  <p></p>
+      {% if not pathnameBool %}
+        <input style="width: 70%" type="text" name="pathname" value="i.e. O101 o Sentiero Maestro Enrico Albertini">
+      {%else%}
+        <input style="width: 70%" type="text" name="pathname" value="{{PathName}}">
+      {%endif%}
+      <p></p>
+      <!-- DESCRIZIONE-->
+      {%if not descriptionBool %}
+        <label style="color: red;" for="description">
+      {%else%}
+        <label for="description">
+      {%endif%}
+        {%if DB%}
+          {%for language in DB%}
+            {%if language.campo == "reportdescription" %}
+              {{language.text}}
+            {%endif%}
+          {%endfor%}
+        {%endif%}
+      </label>
+      <p></p>
+      {% if not descriptionBool %}
+        <textarea id='description' name='description' style="width: 70%; height: 300px" maxlength="3000"></textarea>
+      {%else%}
+        <textarea id='description' name='description' style="width: 70%; height: 300px" maxlength="3000">{{Description}}</textarea>
+      {%endif%}
+      <!-- VALUTAZIONE DELL'OSTACOLO -->
+      <p></p>
+      {%if not evaluationBool %}
+        <label style="color: red;" for ="evaluation">
+      {%else%}
+        <label for ="evaluation">
+      {%endif%}
+        {%if DB%}
+          {%for language in DB%}
+            {%if language.campo == "obstacleevaluation" %}
+              {{language.text}}
+            {%endif%}
+          {%endfor%}
+        {%endif%}
+      </label>
+      {% if not evaluationBool %}
+        <input id="evaluation" type="text" name="evaluation">
+      {%else%}
+        <input id="evaluation" type="text" name="evaluation" value="{{Evaluation}}">
+      {%endif%}
+      <!-- FOTO PER VALUTARE MEGLIO L'ENTITÀ DEL DANNO-->
+      <p></p><p>Foto: ancora da implementare</p>
+      <!-- TASTO DI INVIO REPORT -->
+      <center>
+        <input name="SEND" type="submit" id="SEND" value="SEND">
+      </center>
+    </form>
+  </div>
+</body>
+{% endblock %}

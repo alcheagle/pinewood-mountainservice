@@ -1,232 +1,83 @@
-﻿{% load static %}
+{% load static %}
+
 <!DOCTYPE html>
 
-<html lang="en">
 <head>
-  <title>Pinewood Mountain-service</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-	body,html{
-		margin:0vh;
-		height:100%;
-	}
-	
-	.navbar{
-		height:23%;
-		width:100%;
-		background-color:#014f02;
-		display: flex;
-		flex-wrap: wrap;
-		align-content: flex-start;
-		justify-content: space-around
-		flex-basis: 0;
-	}
-	
-	.listt{
-		height:100%;
-		width:20%;
-		font-family:Verdana;
-		font-size:4vh;
-		color:#009107;
-		align-self:flex;
-		align-items: center;
-		justify-content: center;
-		
-		display: flex;
-		flex-wrap: wrap;
-		align-content: flex-start;
-		justify-content: space-around;
-		flex-basis: 0;
-	}
-	
-	.listt.el0{
-		flex-basis: 0;
-	}
-	
-	.listt:hover{
-		transition: background-color 1s ease, color 1s ease;
-		background-color:darkgreen;
-		color:lightgreen;		
-	}
-	
-  </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{% static extensionCSS %}">
+    <style>
+        body,html{
+            margin:0vh;
+            height:100%;
+        }
+
+        .navbar{
+            height:23%;
+            width:100%;
+            background-color:#014f02;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: flex-start;
+            justify-content: space-around
+            flex-basis: 0;
+            position: auto;
+        }
+
+        .listt{
+            height:100%;
+            width:20%;
+            font-family:Verdana;
+            font-size:4vh;
+            color:#009107;
+            align-self:flex;
+            align-items: center;
+            justify-content: center;
+
+            display: flex;
+            flex-wrap: wrap;
+            align-content: flex-start;
+            justify-content: space-around;
+            flex-basis: 0;
+        }
+
+        .listt.el0{
+            flex-basis: 0;
+        }
+
+        .listt:hover{
+            transition: background-color 1s ease, color 1s ease;
+            background-color:darkgreen;
+            color:lightgreen;
+        }
+    </style>
 </head>
-<body>
 
 <div class="navbar">
-	<div class="listt el0">
-		<svg  height=20vh width=20vh viewBox="0 -3 30 33">
-		<polygon points="0,0 30,0 15,18"  style="fill:#1b8403;stroke-width:0"/>
-		<polygon points="3,8 27,8 15,22.5"  style="fill:#1b8403;stroke-width:0 " />
-		<polygon points="5,13 25,13 15,27.5"  style="fill:#1b8403;stroke-width:0 " />
-		<polygon points="8,13.5 22,13.5 15,23"  style="fill:#2abc09;stroke-width:0 " />
-		<polygon points="7.3,8.3 22.7,8.3 15,17"  style="fill:#2abc09;stroke-width:0 " />
-		<polygon points="11,13 19,13 15,17.8"  style="fill:#1b8403;stroke-width:0 " />
-		<circle cx="15" cy="27" r="2.7" stroke="darkred" stroke-width="0.4" fill="transparent" />
-		</svg>
-	</div>
-	<div class="listt el1" href="#">Reporting</div>
-	<div class="listt el2" href="#">Planning</div>
-	<div class="listt el3" href="#">Exploring</div>
-	<div class="listt elR" href="#">Login</div>
+    <div class="listt el0">
+        <svg  height=20vh width=20vh viewBox="0 -3 30 33">
+        <polygon points="0,0 30,0 15,18"  style="fill:#1b8403;stroke-width:0"/>
+        <polygon points="3,8 27,8 15,22.5"  style="fill:#1b8403;stroke-width:0 " />
+        <polygon points="5,13 25,13 15,27.5"  style="fill:#1b8403;stroke-width:0 " />
+        <polygon points="8,13.5 22,13.5 15,23"  style="fill:#2abc09;stroke-width:0 " />
+        <polygon points="7.3,8.3 22.7,8.3 15,17"  style="fill:#2abc09;stroke-width:0 " />
+        <polygon points="11,13 19,13 15,17.8"  style="fill:#1b8403;stroke-width:0 " />
+        <circle cx="15" cy="27" r="2.7" stroke="darkred" stroke-width="0.4" fill="transparent" />
+        </svg>
+    </div>
+    <div class="listt el1" href="report/{{ lang }}">Reporting</div>
+    <div class="listt el2" href="iter/{{ lang }}">Planning</div>
+    <div class="listt el3" href="#">Exploring</div>
+    <div class="listt elR" href="#">Login</div>
 </div>
 
-<div class="container-fluid text-center">
-  <div class="row content">
-    <div class="col-sm-1 sidenav">
-    </div>
-    <div>
-      <h1>Dante's Inferno</h1>
-      <p style="text-align:center; font-family:french script mt; font-style:italic">Nel mezzo del cammin di nostra vita
-<br>			mi ritrovai per una selva oscura,
-<br>			ché la diritta via era smarrita.
-<br>			Ahi quanto a dir qual era è cosa dura
-<br>			esta selva selvaggia e aspra e forte
-<br>			che nel pensier rinova la paura!
-<br>			Tant' è amara che poco è più morte;
-<br>			ma per trattar del ben ch'i' vi trovai,
-<br>			dirò de l'altre cose ch'i' v'ho scorte.
-<br>			Io non so ben ridir com' i' v'intrai,
-<br>			tant' era pien di sonno a quel punto
-<br>			che la verace via abbandonai.
-<br>			Ma poi ch'i' fui al piè d'un colle giunto,
-<br>			là dove terminava quella valle
-<br>			che m'avea di paura il cor compunto,
-<br>			guardai in alto e vidi le sue spalle
-<br>			vestite già de' raggi del pianeta
-<br>			che mena dritto altrui per ogne calle.
-<br>			Allor fu la paura un poco queta,
-<br>			che nel lago del cor m'era durata
-<br>			la notte ch'i' passai con tanta pieta.
-<br>			E come quei che con lena affannata,
-<br>			uscito fuor del pelago a la riva,
-<br>			si volge a l'acqua perigliosa e guata,
-<br>			così l'animo mio, ch'ancor fuggiva,
-<br>			si volse a retro a rimirar lo passo
-<br>			che non lasciò già mai persona viva.
-<br>			Poi ch'èi posato un poco il corpo lasso,
-<br>			ripresi via per la piaggia diserta,
-<br>			sì che 'l piè fermo sempre era 'l più basso.
-<br>			Ed ecco, quasi al cominciar de l'erta,
-<br>			una lonza leggiera e presta molto,
-<br>			che di pel macolato era coverta;
-<br>			e non mi si partia dinanzi al volto,
-<br>			anzi 'mpediva tanto il mio cammino,
-<br>			ch'i' fui per ritornar più volte vòlto.
-<br>			Temp' era dal principio del mattino,
-<br>			e 'l sol montava 'n sù con quelle stelle
-<br>			ch'eran con lui quando l'amor divino
-<br>			mosse di prima quelle cose belle;
-<br>			sì ch'a bene sperar m'era cagione
-<br>			di quella fiera a la gaetta pelle
-<br>			l'ora del tempo e la dolce stagione;
-<br>			ma non sì che paura non mi desse
-<br>			la vista che m'apparve d'un leone.
-<br>			Questi parea che contra me venisse
-<br>			con la test' alta e con rabbiosa fame,
-<br>			sì che parea che l'aere ne tremesse.
-<br>			Ed una lupa, che di tutte brame
-<br>			sembiava carca ne la sua magrezza,
-<br>			e molte genti fé già viver grame,
-<br>			questa mi porse tanto di gravezza
-<br>			con la paura ch'uscia di sua vista,
-<br>			ch'io perdei la speranza de l'altezza.
-<br>			E qual è quei che volontieri acquista,
-<br>			e giugne 'l tempo che perder lo face,
-<br>			che 'n tutti suoi pensier piange e s'attrista;
-<br>			tal mi fece la bestia sanza pace,
-<br>			che, venendomi 'ncontro, a poco a poco
-<br>			mi ripigneva là dove 'l sol tace.
-<br>			Mentre ch'i' rovinava in basso loco,
-<br>			dinanzi a li occhi mi si fu offerto
-<br>			chi per lungo silenzio parea fioco.
-<br>			Quando vidi costui nel gran diserto,
-<br>			«Miserere di me», gridai a lui,
-<br>			«qual che tu sii, od ombra od omo certo!».
-<br>			Rispuosemi: «Non omo, omo già fui,
-<br>			e li parenti miei furon lombardi,
-<br>			mantoani per patrïa ambedui.
-<br>			Nacqui sub Iulio, ancor che fosse tardi,
-<br>			e vissi a Roma sotto 'l buono Augusto
-<br>			nel tempo de li dèi falsi e bugiardi.
-<br>			Poeta fui, e cantai di quel giusto
-<br>			figliuol d'Anchise che venne di Troia,
-<br>			poi che 'l superbo Ilïón fu combusto.
-<br>			Ma tu perché ritorni a tanta noia?
-<br>			perché non sali il dilettoso monte
-<br>			ch'è principio e cagion di tutta gioia?».
-<br>			«Or se' tu quel Virgilio e quella fonte
-<br>			che spandi di parlar sì largo fiume?»,
-<br>			rispuos' io lui con vergognosa fronte.
-<br>			«O de li altri poeti onore e lume,
-<br>			vagliami 'l lungo studio e 'l grande amore
-<br>			che m'ha fatto cercar lo tuo volume.
-<br>			Tu se' lo mio maestro e 'l mio autore,
-<br>			tu se' solo colui da cu' io tolsi
-<br>			lo bello stilo che m'ha fatto onore.
-<br>			Vedi la bestia per cu' io mi volsi;
-<br>			aiutami da lei, famoso saggio,
-<br>			ch'ella mi fa tremar le vene e i polsi».
-<br>			«A te convien tenere altro vïaggio»,
-<br>			rispuose, poi che lagrimar mi vide,
-<br>			«se vuo' campar d'esto loco selvaggio;
-<br>			ché questa bestia, per la qual tu gride,
-<br>			non lascia altrui passar per la sua via,
-<br>			ma tanto lo 'mpedisce che l'uccide;
-<br>			e ha natura sì malvagia e ria,
-<br>			che mai non empie la bramosa voglia,
-<br>			e dopo 'l pasto ha più fame che pria.
-<br>			Molti son li animali a cui s'ammoglia,
-<br>			e più saranno ancora, infin che 'l veltro
-<br>			verrà, che la farà morir con doglia.
-<br>			Questi non ciberà terra né peltro,
-<br>			ma sapïenza, amore e virtute,
-<br>			e sua nazion sarà tra feltro e feltro.
-<br>			Di quella umile Italia fia salute
-<br>			per cui morì la vergine Cammilla,
-<br>			Eurialo e Turno e Niso di ferute.
-<br>			Questi la caccerà per ogne villa,
-<br>			fin che l'avrà rimessa ne lo 'nferno,
-<br>			là onde 'nvidia prima dipartilla.
-<br>			Ond' io per lo tuo me' penso e discerno
-<br>			che tu mi segui, e io sarò tua guida,
-<br>			e trarrotti di qui per loco etterno;
-<br>			ove udirai le disperate strida,
-<br>			vedrai li antichi spiriti dolenti,
-<br>			ch'a la seconda morte ciascun grida;
-<br>			e vederai color che son contenti
-<br>			nel foco, perché speran di venire
-<br>			quando che sia a le beate genti.
-<br>			A le quai poi se tu vorrai salire,
-<br>			anima fia a ciò più di me degna:
-<br>			con lei ti lascerò nel mio partire;
-<br>			ché quello imperador che là sù regna,
-<br>			perch' i' fu' ribellante a la sua legge,
-<br>			non vuol che 'n sua città per me si vegna.
-<br>			In tutte parti impera e quivi regge;
-<br>			quivi è la sua città e l'alto seggio:
-<br>			oh felice colui cu' ivi elegge!».
-<br>			E io a lui: «Poeta, io ti richeggio
-<br>			per quello Dio che tu non conoscesti,
-<br>			a ciò ch'io fugga questo male e peggio,
-<br>			che tu mi meni là dov' or dicesti,
-<br>			sì ch'io veggia la porta di san Pietro
-<br>			e color cui tu fai cotanto mesti».
-<br>			Allor si mosse, e io li tenni dietro.
-		</p>
-      <hr>
-      <h3>Test</h3>
-      <p>Lorem ipsum...</p>
-    </div>
-    <div class="col-sm-1 sidenav">
-    </div>
-  </div>
-</div>
+{% block content %}
+{% endblock %}
 
-<footer class="container-fluid text-center">
-  <p>Footer Text</p>
+<footer class="text-center">
+      <p>Footer Text</p>
 </footer>
 
-</body>
-</html>

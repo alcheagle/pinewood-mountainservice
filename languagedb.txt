@@ -1,0 +1,36 @@
+en|intestazione|Choose what to do:
+en|learnmore|Learn more here
+it|intestazione|Scegli cosa fare:
+it|learnmore|Scopri di più qui
+en|titlereport| REPORT
+it|titlereport|REPORT
+it|pathName|Inserisci il nome del sentiero
+en|titlereportsent|Report successfully sent
+it|titlereportsent|Report spedito con successo
+en|reportdescription|Insert a description of the problem you encountered
+it|reportdescription|Inserisci una descrizione del problema che hai incontrato
+it|indexdescription|Pinewood Mountain Service è una webapp sviluppata per poter consultare i sentieri di montagna, il loro stato e per poter fare dei report segnalandone lo stato
+en|indexdescription|Pinewood Mountain Service is a webapp developed for consulting muountains iter, their state and giving reports about them
+en|button1|Where to today?
+it|button1|Dove si va oggi?
+en|button2| Report
+it|button2|Report
+en|indexdeveloper|Are you a developer? Do you want to help us, or to use our services to build your webapp?
+it|indexdeveloper|Sei uno sviluppatore? Vuoi aiutarci a migiorare, o vuoi usare il nostro servizio per creare la tua webapp?
+en|givenname|Path
+it|givenname|Nome del percorso: 
+it|givendescription|Descrizione del problema: 
+en|givendescription|Obstacle description: 
+en|givenevaluation|Obstacle evaluation
+it|givenevaluation|Punteggio del problema: 
+it|asterixreport|Report ID e report KEY servono per poter modificare il report anche senza il bisogno di essere loggati
+en|asterixreport|Report KEY and report ID are used to edit the report without having to login in/sign up. 
+it|whyred|Il modulo compilato non era corretto. I campi in rosso indicano quello che era sbagliato. Si prega di ricontrollarli e di non lasciarli bianchi.
+en|whyred|Something went wrong with your form. Red fields indicate that there was something wrong with them. Check them and be sure not to leave them white.
+it|obstacleevaluation|Inserisci un numero da 0 a 10 per indicare quanto l'ostacolo influenzi la prosecuzione del cammino. (0 è tranquillamente agibile, 10 il percorso è interrotto e c'è un pericolo reale per le persone)
+en|pathName|Insert path's name
+en|send|SEND
+it|send|INVIA
+en|delete|DELETE
+it|delete|ELIMINA
+en|obstacleevaluation|Insert a number between 0 and 10 to indicate how much the obstacle prevents the progression of the path (0 there's no problem, 10 it's impossibile to continue the path, and/or may be dangerous)

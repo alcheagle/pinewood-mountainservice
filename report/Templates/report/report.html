@@ -1,0 +1,37 @@
+{% extends extension %}
+
+{% block content %}
+
+<head>
+    <title>
+        Report
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+        function showlogger (){
+            logger.style.display='block';
+            show.style.display='none';
+        }
+    </script>
+</head>
+
+<body>
+    <form action="/report/{{lang}}/reportForm">
+        <input type="submit" value="New report" />
+    </form>
+    <div id="show">
+        <button onclick="showlogger()" id="REPORTMODY">Modify Report </button>
+    </div>
+    <form action="/report/{{lang}}/reportMody" method="post" id="logger" style="display: none">{% csrf_token %}
+        <label for="reportid">Report ID:</label>
+        <input id="reportid" type="text" name="reportid">
+        <p></p>
+        <label for="reportkey">Report KEY:</label>
+        <input id="reportkey" type="text" name="reportkey">
+        <p></p>
+        <input id="sendMody" type="submit" name="Send">
+    </form>
+</body>
+
+{% endblock %}

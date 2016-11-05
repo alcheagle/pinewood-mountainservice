@@ -1,0 +1,52 @@
+ .button { /*Bottoni*/
+    background-color: lightgreen;
+    border-radius: 12px;
+    border: 2px solid #4CAF50;
+    color: black;
+    font: Arial;
+    padding: 50px 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.3s;
+    cursor: pointer;
+}
+
+.button1:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.button1 {
+    background-color: lightgreen;
+    color: green;
+}
+
+.container-fluid{
+    background-image: url("./sfondo.jpeg");
+    background-color: lavenderblush;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    height: 90vh;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.content{
+    background-color: #bef4b9;
+    min-height: 100%;
+}
+
+.width-300px{
+    width: 300px;
+    display: inline-block;
+}
