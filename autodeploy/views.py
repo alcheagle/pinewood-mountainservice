@@ -12,7 +12,7 @@ REQUIRE_GITHUB_SECRET   = True
 def hook_handler(request):
     payload_unicode = request.body.decode("utf-8")
     #verify with secret from github
-    if os.path.isfile(CONFIG_FILE):
+    if os.path.isfile(CONFIG_FILE) and request.method == "POST":
         with open(CONFIG_FILE, "r") as config_file:
             config = json.load(config_file)
 
