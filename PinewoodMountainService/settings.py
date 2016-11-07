@@ -23,9 +23,12 @@ SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = 'uz8onfdp4@sk#u$kh#g*c$a=epgm7^5hy+l-(i*_-1)!7xe^@&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+#DEBUG = False
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'pinewood.gilaquila.com',
+]
 
 # Application definition
 
