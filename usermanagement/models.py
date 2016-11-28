@@ -8,7 +8,7 @@ class Action(models.Model):
 class Role(models.Model):
     id =            models.AutoField(primary_key=True)
     name =          models.CharField(max_length=20, unique=True, null=False)
-    sub_role =      models.ForeignKey('self', on_delete=models.CASCADE) #TODO check if correct
+    sub_role =      models.ForeignKey('self', on_delete=models.CASCADE) #FIXME not correct, this is the opposite of what we whant to achieve: a role can have more subroles, but only one super role
     actions =       models.ManyToManyField(Action)
 
 

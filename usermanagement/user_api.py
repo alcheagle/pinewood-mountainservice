@@ -94,6 +94,23 @@ def getAction(name):
 def isAllowed(username, action):
     pass
 
+def roleResolution(role_id): #TODO apply memoization, this needs also cache invalidation after a create or modify of role
+    father_role = models.Role.objects.filter(sub_role=role_id)
+    
+    if father_role.count() == 1:
+        res = roleResolution(father_role[0].id)
+        return res.append(role_id)
+    elif father_role.count() == 0:
+        #this is the role father of all
+        return [role_id]
+    else:
+        pass
+        #TODO this should never happen
+
+def actionResolution(role_id): #TODO apply memoization, this needs also cache invalidation after a create or modify of actions
+    role_id_list = roleResolution(role_id)
+
+
 def createRole(username, role_name, sub_role, granted_actions):
     pass
 
