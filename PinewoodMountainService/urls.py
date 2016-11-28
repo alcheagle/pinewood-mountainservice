@@ -22,7 +22,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 def mainPage (request):
-    return redirect('homepage/it')
+    return redirect('it')
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
