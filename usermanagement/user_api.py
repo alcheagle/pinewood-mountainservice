@@ -1,9 +1,11 @@
 from . import models
 
-#Create a new user with username (unique), name, surname, email (unique), hash
-#password and an optional date of birth. If the user already exists it return
-#None, otherwise it returns the id of the new user.
 def signup(username, name, surname, email, pwdh, dob=None):
+    '''
+    Create a new user with username (unique), name, surname, email (unique), hash
+    password and an optional date of birth. If the user already exists it return
+    None, otherwise it returns the id of the new user.
+    '''
     if not alreadyIn(username):
         res = models.User.objects.create(
                 username=username,
@@ -17,9 +19,11 @@ def signup(username, name, surname, email, pwdh, dob=None):
 
     return None
 
-#Check if the user already exists. Returns True if it does exists, false
-#otherwise
 def alreadyIn(username):
+    '''
+    Check if the user already exists. Returns True if it does exists, false
+    otherwise
+    '''
     res = models.User.objects.filter(username=username)
 
     if res.count() == 1:
@@ -27,8 +31,10 @@ def alreadyIn(username):
     else:
         return False
 
-#Given the username it returns the id where that user exists
 def getUserId(username):
+    '''
+    Given the username it returns the id where that user exists
+    '''
     res = models.User.objects.filter(username=username)
 
     if res.count() == 1:
@@ -36,9 +42,11 @@ def getUserId(username):
     else:
         return None
 
-#Get username and password hash to check if the user exists, and in this case
-#it returns the id
 def login(username, pwdh):
+    '''
+    Get username and password hash to check if the user exists, and in this case
+    it returns the id
+    '''
     res = models.User.objects.filter(
         username = username,
         password_hash = pwdh,
@@ -48,22 +56,30 @@ def login(username, pwdh):
     else:
         return None
 
-#Given the username, checks id that user exists and eventually deletes it
 def deleteUser(username):
+    '''
+    Given the username, checks id that user exists and eventually deletes it
+    '''
     pass
 
-#Returns all the data of a user if it exists
 def getUserData(username):
+    '''
+    Returns all the data of a user if it exists
+    '''    
     pass
 
-#Get a dictionary containing the new data for a certain user
 def modifyUserData(username, **kwargs):
+    '''
+    Get a dictionary containing the new data for a certain user
+    '''
     pass
 
-#Create a new action with description (optionally) if the name of the going-to-be
-#action isn't already being used. Returns true if the action was created, False
-#otherwise
 def createAction(action_name, description=None):
+    '''
+    Create a new action with description (optionally) if the name of the going-to-be
+    action isn't already being used. Returns true if the action was created, False
+    otherwise
+    '''
     res = models.Action.objects.filter(name = action_name)
 
     if res.count() == 1:
@@ -75,10 +91,12 @@ def createAction(action_name, description=None):
         )
         return True
 
-#Given the name and a dictionary containing the new data for that action, it
-#modify the action values. Returns True if the change went well, False otherwise
-#and False if the action doesn't exist too.
 def modifyAction(act_name, **kwargs):
+    '''
+    Given the name and a dictionary containing the new data for that action, it
+    modify the action values. Returns True if the change went well, False otherwise
+    and False if the action doesn't exist too.
+    '''
     res = models.Action.objects.filter(name = act_name)
     if res.count() == 1:
         for key in kwargs:
@@ -90,9 +108,11 @@ def modifyAction(act_name, **kwargs):
     else:
         return False
 
-#Check if the given action exists and delete it in case. Returns True if it was
-#successfully erased, False otherwise
 def deleteAction(name):
+    '''
+    Check if the given action exists and delete it in case. Returns True if it was
+    successfully erased, False otherwise
+    '''
     res = models.Action.objects.filter(name = name)
 
     if res.count() == 1:
@@ -101,9 +121,11 @@ def deleteAction(name):
     else:
         return False
 
-#Check if the given action exists, and in case it does, the function returns
-#a dictionary containing the values of the action, otherwise it returns None
 def getAction(name):
+    '''
+    Check if the given action exists, and in case it does, the function returns
+    a dictionary containing the values of the action, otherwise it returns None
+    '''
     res = models.Action.objects.filter(name = name)
 
     if res.count() == 1:
@@ -111,8 +133,11 @@ def getAction(name):
     else:
         return None
 
-#Check if the given user is allowed to accomplish a certain action.
 def isAllowed(username, action):
+    '''
+    Check if the given user is allowed to accomplish a certain action.
+    '''
+    res = models.User.objects.get(username=username)
     
 
 def roleResolution(role_id): #TODO apply memoization, this needs also cache invalidation after a create or modify of role
@@ -137,28 +162,38 @@ def actionResolution(role_id): #TODO apply memoization, this needs also cache in
 
     #return [x["actions"] for x in res.values()]
 
-#Create a new Role. It has to check that the user who wants to create it is
-#allowed to. It then create a new sub_role which will be granted the possibility
-#of accomplishing certain actions.
 def createRole(username, role_name, sub_role, granted_actions):
+    '''
+    Create a new Role. It has to check that the user who wants to create it is
+    allowed to. It then create a new sub_role which will be granted the possibility
+    of accomplishing certain actions.
+    '''
     pass
 
-#Check if a certain role exists, then check if the user is allowed to delete it
-#and eventually delete it.
 def deleteRole(username, role_name):
+    '''
+    Check if a certain role exists, then check if the user is allowed to delete it
+    and eventually delete it.
+    '''
     pass
 
-#Check if a certain role exists, then check if the user is allowed to modify it
-#and eventually modify it.
 def modifyRole(username, role_name, actions_to_add, actions_to_delete):
+    '''
+    Check if a certain role exists, then check if the user is allowed to modify it
+    and eventually modify it.
+    '''
     pass
 
-#Check if the granter has the possibility to promote a certain user, and
-#eventually it does
 def grantRole(user_granter, username, role):
+    '''
+    Check if the granter has the possibility to promote a certain user, and
+    eventually it does
+    '''
     pass
 
-#Check if the granter has the possibility to revoke a certain role from a user,
-#and eventually it does
 def revokeRole(user_revoker, username, toRole=None):
+    '''
+    Check if the granter has the possibility to revoke a certain role from a user,
+    and eventually it does
+    '''
     pass
