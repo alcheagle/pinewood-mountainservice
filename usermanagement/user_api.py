@@ -113,24 +113,29 @@ def getAction(name):
 
 #Check if the given user is allowed to accomplish a certain action.
 def isAllowed(username, action):
-    pass
+    
 
 def roleResolution(role_id): #TODO apply memoization, this needs also cache invalidation after a create or modify of role
-    father_role = models.Role.objects.filter(sub_role=role_id)
-    
-    if father_role.count() == 1:
-        res = roleResolution(father_role[0].id)
-        return res.append(role_id)
-    elif father_role.count() == 0:
-        #this is the role father of all
-        return [role_id]
-    else:
-        pass
-        #TODO this should never happen
+    def roleres_aux(role_id, res=[]): #TODO check the correctness of the queries
+        father_role = models.Role.objects.get(id=role_id)
+        res.append(role_id)
+        if father_role.count() == 1:
+            roleres_aux(father_role[0].super_role, res)
+        elif father_role.count() == 0:
+            #this is the role father of all
+            return res
+        else:
+            pass
+            #CHECK this should never happen
+
+    return roleres_aux(role_id)
 
 def actionResolution(role_id): #TODO apply memoization, this needs also cache invalidation after a create or modify of actions
     role_id_list = roleResolution(role_id)
+    
+    res = Role.objects.select_related().filter(id__in=role_id_list) #TODO check if this provides what desired
 
+    #return [x["actions"] for x in res.values()]
 
 #Create a new Role. It has to check that the user who wants to create it is
 #allowed to. It then create a new sub_role which will be granted the possibility

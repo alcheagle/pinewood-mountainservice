@@ -8,7 +8,7 @@ class Action(models.Model):
 class Role(models.Model):
     id =            models.AutoField(primary_key=True)
     name =          models.CharField(max_length=20, unique=True, null=False)
-    sub_role =      models.ForeignKey('self', on_delete=models.CASCADE) #FIXME not correct, this is the opposite of what we whant to achieve: a role can have more subroles, but only one super role
+    super_role =    models.ForeignKey('self', on_delete=models.CASCADE) 
     actions =       models.ManyToManyField(Action)
 
 
@@ -20,7 +20,6 @@ class User(models.Model):
     email =         models.EmailField(unique=True, null=False)
     password_hash = models.CharField(max_length=64, null=False)
     date_of_birth = models.DateField(null=True, default=None)
-   
     role =          models.ForeignKey(Role, on_delete=models.SET_NULL, null=True)
 
     class Meta:

@@ -36,6 +36,7 @@ INSTALLED_APPS = (
     'tracking.apps.TrackingConfig',
     'languageMods.apps.LanguagemodsConfig',
     'report.apps.ReportConfig',
+    'usermanagement.apps.UsermanagementConfig',
     'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
