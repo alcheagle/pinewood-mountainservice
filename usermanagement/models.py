@@ -17,7 +17,7 @@ class User(models.Model):
     name =          models.CharField(max_length=50, null=False)
     surname =       models.CharField(max_length=50, null=False)
     username =      models.CharField(max_length=50, unique=True, null=False)
-    email =         models.EmailField(unique=True, null=False)
+    email =         models.EmailField(max_length=100, unique=True, null=False)
     password_hash = models.CharField(max_length=64, null=False)
     date_of_birth = models.DateField(null=True, default=None)
     role =          models.ForeignKey(Role, on_delete=models.SET_NULL, null=True)
