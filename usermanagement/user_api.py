@@ -57,7 +57,7 @@ def deleteUser(username):
     '''
     Given the username, checks id that user exists and eventually deletes it. Returns True if the user existed and it was deleted, False if it didn't exists.
     '''
-    res = models.Action.objects.filter(name = action_name)
+    res = models.User.objects.filter(username = username)
 
     if res.count() == 1:
         res.delete()
@@ -69,7 +69,7 @@ def getUserData(username):
     '''
     Returns all the data of a user if it exists. It returns None if the user wasn't found
     '''
-    res = models.Action.objects.filter(name = action_name)
+    res = models.Action.objects.filter(username = username)
 
     if res.count() == 1:
         return res.values()[0]
@@ -80,7 +80,7 @@ def modifyUserData(username, **kwargs):
     '''
     Get a dictionary containing the new data for a certain user. It returns False whether the user wasn't found nor the dictionary had the right keys. It returns True if the change went well.
     '''
-    res = models.Action.objects.filter(name = action_name)
+    res = models.Action.objects.filter(username = username)
 
     if res.count() == 1:
         for key in kwargs:
@@ -173,23 +173,51 @@ def actionResolution(role_id): #TODO apply memoization, this needs also cache in
 
     #return [x["actions"] for x in res.values()]
 
-def createRole(username, role_name, sub_role, granted_actions):
+def createRole(username, role_name, super_role, granted_actions):
     '''
-    Create a new Role. It has to check that the user who wants to create it is allowed to. It then create a new sub_role which will be granted the possibility of accomplishing certain actions.
+    Create a new Role. It has to check that the user is allowed to create it. It then create a new super_role which will be granted the possibility of accomplishing certain actions.
     '''
-    pass
+    res = models.Role.objects.filter(name = role_name)
+
+    if res.count() == 1:
+        return False
+    else:
+        res = models.Role.objects.get_or_create(
+            name = role_name,
+            super_role = super_role,
+            actions = [createAction(action) for action in granted_actions], #TODO check if right
+        )
+        return True
 
 def deleteRole(username, role_name):
     '''
     Check if a certain role exists, then check if the user is allowed to delete it and eventually delete it.
     '''
-    pass
+    res = models.Role.objects.filter(name = role_name)
+
+    if res.count() == 1:
+        if isAllowed(username, 'deleteRole'):
+            res.delete()
+            return True
+        else:
+            return False
+    else:
+        return False
 
 def modifyRole(username, role_name, actions_to_add, actions_to_delete):
     '''
     Check if a certain role exists, then check if the user is allowed to modify it and eventually modify it.
     '''
-    pass
+    res = models.Role.objects.filter(name = role_name)
+    if res.count() == 1:
+        for key in kwargs:
+            if key != "name" and key != 'super_role' and key != "actions":
+                return False
+        res.update(**kwargs) #TODO NOT SO FUCKING SURE
+        return True
+    else:
+        return False
+
 
 def grantRole(user_granter, username, role):
     '''
