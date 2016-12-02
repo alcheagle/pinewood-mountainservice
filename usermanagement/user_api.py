@@ -173,23 +173,25 @@ def actionResolution(role_id): #TODO apply memoization, this needs also cache in
 
     #return [x["actions"] for x in res.values()]
 
-def createRole(username, role_name, super_role, granted_actions):
+def createRole(role_name, super_role, granted_actions):
     '''
     Create a new Role. It has to check that the user is allowed to create it. It then create a new super_role which will be granted the possibility of accomplishing certain actions.
     '''
     res = models.Role.objects.filter(name = role_name)
-
+    for action in granted_actions:
+        createAction (action)
     if res.count() == 1:
         return False
     else:
         res = models.Role.objects.get_or_create(
             name = role_name,
             super_role = super_role,
-            actions = [createAction(action) for action in granted_actions], #TODO check if right
+            #actions = createAction(granted_actions), #TODO check if right
         )
+        print (str(res))
         return True
 
-def deleteRole(username, role_name):
+def deleteRole(role_name):
     '''
     Check if a certain role exists, then check if the user is allowed to delete it and eventually delete it.
     '''
@@ -204,7 +206,7 @@ def deleteRole(username, role_name):
     else:
         return False
 
-def modifyRole(username, role_name, actions_to_add, actions_to_delete):
+def modifyRole(role_name, actions_to_add, actions_to_delete):
     '''
     Check if a certain role exists, then check if the user is allowed to modify it and eventually modify it.
     '''
@@ -219,13 +221,13 @@ def modifyRole(username, role_name, actions_to_add, actions_to_delete):
         return False
 
 
-def grantRole(user_granter, username, role):
+def grantRole(username, role):
     '''
     Check if the granter has the possibility to promote a certain user, and eventually it does
     '''
     pass
 
-def revokeRole(user_revoker, username, toRole=None):
+def revokeRole(username, toRole=None):
     '''
     Check if the granter has the possibility to revoke a certain role from a user, and eventually it does
     '''
